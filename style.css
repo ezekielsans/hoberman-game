@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Honk&family=Inter&display=swap');
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: greenyellow;
+    justify-content: center;
+    text-align: center;
+}
+
+.title h1 {
+
+
+    font-family: "Honk", system-ui;
+    font-size: 5rem;
+
+
+}
+
+.score {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.score h1 {
+    font-family: "Honk", system-ui;
+    font-size: 2.5rem;
+}
+
+.game {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+
+
+    /* height: 100px;
+    width: 100px; */
+}
+
+
+
+
+/* per click of the button add this */
+.hand-toss {
+    /* transform: translateX(210deg); */
+    transform: rotateZ(-20deg);
+    transition: ease-in-out .5s;
+}
+
+.container button {
+    margin-top: 1.5rem;
+}
+
+.alwaysBlue-pushable {
+
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-82-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.alwaysBlue-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(to left,
+            hsl(228 100% 16%) 0%,
+            hsl(228 100% 32%) 8%,
+            hsl(228 100% 32%) 92%,
+            hsl(228 100% 16%) 100%);
+}
+
+.button-82-front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: hsl(228, 100%, 47%);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition:
+        transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+    .button-82-front {
+        font-size: 1.25rem;
+        padding: 12px 42px;
+    }
+}
+
+.button-82-pushable:hover {
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+}
+
+.alwaysBlue-pushable:hover .button-82-front {
+    transform: translateY(-6px);
+    transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.alwaysBlue-pushable:active .button-82-front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.alwaysBlue-pushable:hover .button-82-shadow {
+    transform: translateY(4px);
+    transition:
+        transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.alwaysBlue-pushable:active .button-82-shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.alwaysBlue-pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+
+
+
+
+.gameBall {
+    position: absolute;
+    top: -20px;
+    left: 475px;
+    z-index: 1;
+
+
+}
+
+
+
+/* NEW LEARNING:
+
+- it is possible to add a rotate element to the transform
+even if there;s translate
+
+
+*/
+@keyframes upAndDown {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-150px) rotate(180deg);
+
+        /* Move up */
+    }
+
+    100% {
+        transform: translateY(0) rotate(360deg);
+        /* Return to the initial position */
+    }
+}
+
+/* Apply the animation to the element */
+.bounce {
+    animation: upAndDown 1.25s ease-in-out;
+    /* Apply the animation */
+}
+
+
+#yellowBall {
+
+
+    position: absolute;
+    top: 75px;
+    left: 80px;
+    z-index: 1;
+
+
+}
+
+
+
+
+
+@keyframes shakeIt {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateX(150px) rotate(25deg);
+
+        /* Move up */
+    }
+
+    100% {
+        transform: translateX(50px) rotate(-25deg);
+        /* Return to the initial position */
+    }
+}
+
+/* Apply the animation to the element */
+.shake {
+    animation: shakeIt .5s ease-in-out;
+    /* Apply the animation */
+}
+
+.gameOver {
+
+    background-color: red;
+}

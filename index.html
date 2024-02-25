@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="assets/blue.png" type="image/x-icon">
+</head>
+
+<body>
+
+
+
+
+    <main class="container">
+        <section class="title">
+            <h1>Silicon Valley Game</h1>
+        </section>
+
+        <section class="score">
+            <h1>Streak:<span id="streak"></span></h1>
+            <h1>BestScore: <span id="liveScore"></span></h1>
+        </section>
+        <section class="game">
+            <div class="gameBall">
+                <img id="blueBall" height="420px" src="assets/blue.png" />
+                <img id="yellowBall" height="300px" src="assets/yellow.png" />
+            </div>
+            <div class="hand"><img src="assets/hand.png" alt=""></div>
+        </section>
+
+        <button id="tryAgain" class="alwaysBlue-pushable" role="button"><span class="button-82-shadow"></span><span
+                class="alwaysBlue-edge"></span><span class="button-82-front text">Try Again?</span></button>
+
+        <button id="gameButton" class="alwaysBlue-pushable" role="button"><span class="button-82-shadow"></span><span
+                class="alwaysBlue-edge"></span><span class="button-82-front text">Always Blue</span></button>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
